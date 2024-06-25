@@ -1,0 +1,10 @@
+/*
+ * © 2024 AO Kaspersky Lab
+ * Licensed under the MIT License
+ */
+entity jwt_example.TokenService
+
+endpoints
+{
+    token  : jwt_example.IToken
+}

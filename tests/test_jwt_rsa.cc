@@ -1,3 +1,8 @@
+/*
+ * © 2024 AO Kaspersky Lab
+ * Licensed under the MIT License 
+ */
+
 #include <iostream>
 #include <fstream>
 #include <map>
@@ -13,7 +18,7 @@
 #define RSA512_PUB_KEY CERT_ROOT_DIR "/rsa_certs/rsa512_pub.pem"
 #define RSA512_PRIV_KEY CERT_ROOT_DIR "/rsa_certs/rsa512_priv.pem"
 
-std::string read_from_file(const std::string& path)
+static std::string read_from_file(const std::string& path)
 {
   std::string contents;
   std::ifstream is{path, std::ifstream::binary};

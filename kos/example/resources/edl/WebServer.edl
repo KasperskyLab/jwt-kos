@@ -1,0 +1,5 @@
+/*
+ * © 2024 AO Kaspersky Lab
+ * Licensed under the MIT License
+ */
+entity jwt_example.WebServer

@@ -1,0 +1,14 @@
+# © 2024 AO Kaspersky Lab
+# Licensed under the MIT License
+#
+entities:
+
+- name: unittests.TestEntity
+  env:
+    VFS_FILESYSTEM_BACKEND: client:kl.VfsRamFs
+  connections:
+  - target: kl.VfsRamFs
+    id: kl.VfsRamFs
+@INIT_TestEntity_ENTITY_CONNECTIONS+@
+
+@INIT_EXTERNAL_ENTITIES@

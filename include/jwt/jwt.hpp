@@ -1,5 +1,6 @@
 /*
 Copyright (c) 2017 Arun Muralidharan
+© 2024 AO Kaspersky Lab
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -30,6 +31,10 @@ SOFTWARE.
 #include <ostream>
 #include <cassert>
 #include <cstring>
+
+#ifdef __KOS__
+#include <strings.h>
+#endif
 
 #include "jwt/assertions.hpp"
 #include "jwt/base64.hpp"

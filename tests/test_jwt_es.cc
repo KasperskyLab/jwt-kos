@@ -1,3 +1,8 @@
+/*
+ * © 2024 AO Kaspersky Lab
+ * Licensed under the MIT License 
+ */
+
 #include <iostream>
 #include <fstream>
 #include <map>
@@ -9,7 +14,7 @@
 #define EC384_PUB_KEY CERT_ROOT_DIR "/ec_certs/ec384_pub.pem"
 #define EC384_PRIV_KEY CERT_ROOT_DIR "/ec_certs/ec384_priv.pem"
 
-std::string read_from_file(const std::string& path)
+static std::string read_from_file(const std::string& path)
 {
   std::string contents;
   std::ifstream is{path, std::ifstream::binary};

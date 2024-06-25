@@ -1,0 +1,15 @@
+/*
+ * © 2024 AO Kaspersky Lab
+ * Licensed under the MIT License
+ */
+package jwt_example.IToken
+
+const UInt32 MaxTokenSize = 5120;
+typedef sequence<UInt8, MaxTokenSize> Token;
+typedef UInt8 Bool;
+
+interface
+{
+    Generate(out Token token);
+    Verify(in Token token, out Bool result);
+}

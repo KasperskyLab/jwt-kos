@@ -1,1 +1,5 @@
-/build/
+.idea
+.cproject
+.project
+kos/example/build
+kos/unittests/build
