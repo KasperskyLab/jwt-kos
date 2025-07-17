@@ -1,9 +1,10 @@
-MIT License
+**Jwt-kos** is an adapted version of the CPP-JWT project for use on KasperskyOS.
 
-KasperskyOS modification is
-© 2024 AO Kaspersky Lab
+This software is derived from CPP-JWT and is licensed under the MIT License.
 
-The original JWT library is:
+© 2025 AO Kaspersky Lab.
+
+# CPP-JWT license
 
 MIT License
 

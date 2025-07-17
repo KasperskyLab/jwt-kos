@@ -79,15 +79,15 @@ bool TokenHandler::Verify(const std::string& token)
     try
     {
         auto dec_obj = jwt::decode(token, jwt::params::algorithms( { "HS256" }), jwt::params::secret(m_secretWord));
-        std::cout << "[" << app::AppTag << "][HEADER  ]" << dec_obj.header() << std::endl;
-        std::cout << "[" << app::AppTag << "][PAYLOAD ]" << dec_obj.payload() << std::endl;
+        std::cout << app::AppTag << " HEADER: " << dec_obj.header() << std::endl;
+        std::cout << app::AppTag << "PAYLOAD: " << dec_obj.payload() << std::endl;
         if (dec_obj.payload().has_claim(payloadKey) && dec_obj.payload().get_claim_value<std::string>(payloadKey) == payloadValue)
         {
             return true;
         }
     } catch (jwt::SignatureFormatError& err)
     {
-        std::cout << "[" << app::AppTag << "] Token parse error: " << err.what() << std::endl;
+        std::cout << app::AppTag << "Token parse error: " << err.what() << std::endl;
     }
 
     return false;
@@ -95,7 +95,7 @@ bool TokenHandler::Verify(const std::string& token)
 
 std::string TokenHandler::Generate()
 {
-    std::cout << "[" << app::AppTag << "] *** [GetJWTToken] ***" << std::endl;
+    std::cout << app::AppTag << "*** [GetJWTToken] ***" << std::endl;
 
     std::string token;
 
@@ -109,7 +109,7 @@ std::string TokenHandler::Generate()
 
     } catch (std::exception& err)
     {
-        std::cout << "[" << app::AppTag << "] Token create error: " << err.what() << std::endl;
+        std::cout << app::AppTag << "Token create error: " << err.what() << std::endl;
     }
 
     return token;

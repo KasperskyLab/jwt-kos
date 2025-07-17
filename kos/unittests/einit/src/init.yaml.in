@@ -1,6 +1,6 @@
 # © 2024 AO Kaspersky Lab
 # Licensed under the MIT License
-#
+
 entities:
 
 - name: unittests.TestEntity

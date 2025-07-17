@@ -2,6 +2,7 @@
  * © 2024 AO Kaspersky Lab
  * Licensed under the MIT License
  */
+
 #ifndef TOKEN_SERVICE_INCLUDE_SERVER_H
 #define TOKEN_SERVICE_INCLUDE_SERVER_H
 #pragma once
@@ -26,7 +27,7 @@ private:
     nk_arena                m_reqArena;
     nk_arena                m_resArena;
 
-    char m_reqBuffer[TokenService_entity_req_arena_size];
-    char m_resBuffer[TokenService_entity_res_arena_size];
+    char m_reqBuffer[TokenService_entity_req_arena_size] { };
+    char m_resBuffer[TokenService_entity_res_arena_size] { };
 };
 #endif  // TOKEN_SERVICE_INCLUDE_SERVER_H

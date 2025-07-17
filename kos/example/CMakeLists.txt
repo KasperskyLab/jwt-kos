@@ -1,4 +1,4 @@
-# © 2024 AO Kaspersky Lab
+# © 2025 AO Kaspersky Lab
 # Licensed under the MIT License
 
 cmake_minimum_required(VERSION 3.25)
@@ -12,8 +12,22 @@ initialize_platform()
 # for working with the NK compiler (nk-gen-c).
 include(platform/nk)
 
+# Detect board.
+if(CMAKE_SYSTEM_SOC STREQUAL "BCM2711")
+  set(BOARD "RPI4_BCM2711")
+elseif(CMAKE_SYSTEM_SOC STREQUAL "RK3568")
+  set(BOARD "RADXA_ROCK_3A")
+else()
+  message(FATAL_ERROR "Unsupported board for SoC '${CMAKE_SYSTEM_SOC}'")
+endif()
+
 set(JWT_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../..)
+set(THIRD_PARTY_ROOT_DIR ${JWT_ROOT_DIR}/third_party)
+
+set(OPENSSL_ROOT_DIR ${THIRD_PARTY_ROOT_DIR}/openssl)
+
 include_directories(${JWT_ROOT_DIR}/include)
+include_directories(${OPENSSL_ROOT_DIR}/include)
 
 # Build idl/cdl/edl files.
 nk_build_idl_files(jwt_example_token_service_idl

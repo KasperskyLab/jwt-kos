@@ -13,10 +13,10 @@ Please refer to the following helpful resources for more information about:
 * the original CPP-JWT library—[README.md](https://github.com/arun11299/cpp-jwt/blob/master/README.md)
 * using JWT—[Anatomy of JWT](https://scotch.io/tutorials/the-anatomy-of-a-json-web-token),
 [Learn JWT](https://auth0.com/learn/json-web-tokens/) and [RFC 7519](https://tools.ietf.org/html/rfc7519)
-* KasperskyOS—[KasperskyOS Community Edition Online Help](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.2&customization=KCE_community_edition).
+* KasperskyOS—[KasperskyOS Community Edition Online Help](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.3&customization=KCE&helpid=community_edition).
 
 Limitations and known issues are described in the
-[KasperskyOS Community Edition Online Help](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.2&customization=KCE_limitations_and_known_problems).
+[KasperskyOS Community Edition Online Help](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.3&customization=KCE&helpid=limitations_and_known_problems).
 
 ## Table of contents
 - [JWT library adaptation for KasperskyOS](#jwt-library-adaptation-for-kasperskyos)
@@ -34,18 +34,21 @@ Limitations and known issues are described in the
 
 ### Prerequisites
 
-1. [Install](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.2&customization=KCE_sdk_install_and_remove)
+1. [Install](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.3&customization=KCE&helpid=sdk_install_and_remove)
 KasperskyOS Community Edition SDK. You can download the latest version of the KasperskyOS Community
 Edition for free from [os.kaspersky.com](https://os.kaspersky.com/development/). The minimum required
-version of the KasperskyOS Community Edition SDK is 1.2. For more information, see
-[System requirements](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.2&customization=KCE_system_requirements).
-1. Copy source files to your project directory. The example of KasperskyOS-based solution and tests
-are located in the [`./kos`](kos) directory.
+version of the KasperskyOS Community Edition SDK is 1.3. For more information, see
+[System requirements](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.3&customization=KCE&helpid=system_requirements).
+1. Clone the JWT for KasperskyOS repository to your project directory (to reduce cloning time you can use `--depth 1` option):
+    ```sh
+     $ git clone --recurse-submodules --shallow-submodules https://github.com/KasperskyLab/jwt-kos.git
+    ```
+The example of KasperskyOS-based solution and tests are located in the [`./kos`](kos) directory.
 
 ## Usage
 
 When you develop a KasperskyOS-based solution, use the
-[recommended structure of project directories](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.2&customization=KCE_cmake_using_sdk_cmake)
+[recommended structure of project directories](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.3&customization=KCE&helpid=cmake_using_sdk_cmake)
 to simplify usage of CMake scripts.
 
 To include the JWT library in your KasperskyOS-based solution, add a directory with header files using
@@ -71,6 +74,10 @@ Registered trademarks and endpoint marks are the property of their respective ow
 
 GoogleTest is a trademark of Google LLC.
 
+Visual Studio is a trademark of the Microsoft group of companies.
+
+OpenSSL is a trademark owned by the OpenSSL Software Foundation.
+
 Raspberry Pi is a trademark of the Raspberry Pi Foundation.
 
 ## Contributing
@@ -80,8 +87,8 @@ instructions on code contribution.
 
 ## Licensing
 
-This project is licensed under the terms of the MIT license. See [LICENSE](LICENSE) for more information.
+This project is licensed under the terms of the MIT License. See [LICENSE](LICENSE) for more information.
 
 [⬆ Back to Top](#Table-of-contents)
 
-© 2024 AO Kaspersky Lab
+© 2025 AO Kaspersky Lab
