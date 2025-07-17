@@ -2,6 +2,7 @@
  * © 2024 AO Kaspersky Lab
  * Licensed under the MIT License
  */
+
 package jwt_example.IToken
 
 const UInt32 MaxTokenSize = 5120;

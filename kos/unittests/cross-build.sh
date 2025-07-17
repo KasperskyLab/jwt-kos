@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# © 2024 AO Kaspersky Lab
+# © 2025 AO Kaspersky Lab
 # Licensed under the MIT License
 
 Usage() {
@@ -8,8 +8,8 @@ Usage() {
     echo "KasperskyOS SDK location will be obtained from the SDK_PREFIX environment variable."
     echo ""
     echo "Available targets":
-    echo "  qemu      - build for QEMU."
-    echo "  rpi       - build for Raspberry Pi 4 B."
+    echo "  qemu - build for QEMU."
+    echo "  hw   - build for hardware."
     echo ""
     echo "Options:"
     echo "  -h | --help     - print this message."
@@ -17,8 +17,8 @@ Usage() {
     echo "                    this option overrides the SDK_PREFIX environment variable."
     echo ""
     echo "Examples:"
-    echo "  ./cross-build.sh rpi "
-    echo "  ./cross-build.sh rpi -s \"/opt/KasperskyOS-Community-Edition-<version>\""
+    echo "  ./cross-build.sh qemu "
+    echo "  ./cross-build.sh hw -s \"/opt/KasperskyOS-Community-Edition-<version>\""
     echo ""
 }
 
@@ -30,8 +30,8 @@ while [ -n "${1}" ]; do
         exit 0;;
     -s | --sdk) SDK_PREFIX="${2}"
         shift;;
-    qemu) TARGET_PLATFORM=sim;;
-    rpi) TARGET_PLATFORM=sd-image;;
+    qemu) TARGET=sim;;
+    hw) TARGET=sd-image;;
     -*) echo "Unknown option -'${1}'."
         Usage
         exit 1;;
@@ -52,8 +52,7 @@ SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 BUILD="${SCRIPT_DIR}/build"
 
 export LANG=C
-export TARGET="aarch64-kos"
-export BOARD="RPI4_BCM2711"
+export TARGET_PLATFORM="aarch64-kos"
 export PKG_CONFIG=""
 export INSTALL_PREFIX="$BUILD/../install"
 export PATH="$SDK_PREFIX/toolchain/bin:$PATH"
@@ -71,10 +70,12 @@ if [ "$BUILD_WITH_GCC" == "y" ];then
     TOOLCHAIN_SUFFIX="-gcc"
 fi
 
+(cd $SCRIPT_DIR/../../ && git submodule update --init --depth=1 third_party/openssl && cd third_party/openssl && ./config && make build_generated)
+
 "$SDK_PREFIX/toolchain/bin/cmake" -G "Unix Makefiles" -B "$BUILD" \
       -D CMAKE_BUILD_TYPE:STRING=Debug \
       -D CMAKE_INSTALL_PREFIX:STRING="$INSTALL_PREFIX" \
-      -D BOARD="${BOARD}" \
-      -D CMAKE_FIND_ROOT_PATH="$PREFIX_DIR/sysroot-$TARGET" \
-      -D CMAKE_TOOLCHAIN_FILE="$SDK_PREFIX/toolchain/share/toolchain-$TARGET$TOOLCHAIN_SUFFIX.cmake" \
-      "$SCRIPT_DIR/" && "$SDK_PREFIX/toolchain/bin/cmake" --build "$BUILD" --target $TARGET_PLATFORM
+      -D CMAKE_FIND_ROOT_PATH="$PREFIX_DIR/sysroot-$TARGET_PLATFORM" \
+      -D CMAKE_TOOLCHAIN_FILE="$SDK_PREFIX/toolchain/share/toolchain-$TARGET_PLATFORM$TOOLCHAIN_SUFFIX.cmake" \
+      -D OPENSSL_INCLUDE_DIR="$SCRIPT_DIR/../../third_party/openssl/include/" \
+      "$SCRIPT_DIR/" && "$SDK_PREFIX/toolchain/bin/cmake" --build "$BUILD" --target $TARGET

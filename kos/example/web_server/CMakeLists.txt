@@ -1,9 +1,9 @@
-# © 2024 AO Kaspersky Lab
+# © 2025 AO Kaspersky Lab
 # Licensed under the MIT License
 
 include(platform/nk)
 
-project_header_default("STANDARD_GNU_11:YES" "STRICT_WARNINGS:NO")
+project_header_default("STANDARD_GNU_17:YES" "STRICT_WARNINGS:NO")
 
 set(INCLUDE_DIR include)
 set(SRC_DIR src)

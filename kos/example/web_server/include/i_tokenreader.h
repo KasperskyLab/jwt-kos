@@ -2,6 +2,7 @@
  * © 2024 AO Kaspersky Lab
  * Licensed under the MIT License
  */
+
 #ifndef WEB_SERVER_INCLUDE_I_TOKENREADER_H
 #define WEB_SERVER_INCLUDE_I_TOKENREADER_H
 #pragma once

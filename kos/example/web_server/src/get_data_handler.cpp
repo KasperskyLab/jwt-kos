@@ -1,5 +1,5 @@
 /*
-* © 2024 AO Kaspersky Lab
+* © 2025 AO Kaspersky Lab
 * Licensed under the MIT License
 */
 
@@ -26,7 +26,7 @@ bool GetDataHandler::handleGet(CivetServer*, mg_connection* conn)
 
     if (m_tokenReader->Verify(token))
     {
-        mg_printf(conn, "%s\r\n", "<div class=\"success\">Data access successed</div>");
+        mg_printf(conn, "%s\r\n", "<div class=\"success\">Data access succeeded</div>");
     }
     else
     {

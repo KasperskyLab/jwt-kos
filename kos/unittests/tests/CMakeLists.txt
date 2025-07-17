@@ -1,11 +1,11 @@
-# © 2024 AO Kaspersky Lab
+# © 2025 AO Kaspersky Lab
 # Licensed under the MIT License
 
 include(platform/nk)
 
 find_package(OpenSSL REQUIRED)
 
-project_header_default("STANDARD_GNU_11:YES" "STRICT_WARNINGS:NO")
+project_header_default("STANDARD_GNU_17:YES" "STRICT_WARNINGS:NO")
 
 generate_edl_file(TestEntity PREFIX unittests)
 nk_build_edl_files(unit_tests NK_MODULE unittests EDL ${EDL_FILE})

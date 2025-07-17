@@ -1,8 +1,9 @@
 /*
- * © 2024 AO Kaspersky Lab
+ * © 2025 AO Kaspersky Lab
  * Licensed under the MIT License
  */
-entity jwt_example.TokenService
+
+task class jwt_example.TokenService
 
 endpoints
 {

@@ -2,6 +2,7 @@
  * © 2024 AO Kaspersky Lab
  * Licensed under the MIT License
  */
+
 #ifndef WEB_SERVER_INCLUDE_KOS_CONNECTOR_H
 #define WEB_SERVER_INCLUDE_KOS_CONNECTOR_H
 #pragma once

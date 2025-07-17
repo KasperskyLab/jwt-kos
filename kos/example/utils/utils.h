@@ -2,6 +2,7 @@
  * © 2024 AO Kaspersky Lab
  * Licensed under the MIT License
  */
+
 #ifndef TOKEN_SERVICE_INCLUDE_UTILS_H
 #define TOKEN_SERVICE_INCLUDE_UTILS_H
 #pragma once
