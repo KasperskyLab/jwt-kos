@@ -1,5 +1,8 @@
 # JWT library adaptation for KasperskyOS
 
+> [!IMPORTANT]
+> The project was moved to `KasperskyLab/kos-ce-extra` repository: [jwt example](https://github.com/KasperskyLab/kos-ce-extra/tree/master/examples/jwt).
+
 This version of the [CPP-JWT library](https://github.com/arun11299/cpp-jwt) is adapted for KasperskyOS.
 
 JSON Web Token (JWT) library creates access tokens that allow users to access resources. A server
@@ -35,9 +38,8 @@ Limitations and known issues are described in the
 ### Prerequisites
 
 1. [Install](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.3&customization=KCE&helpid=sdk_install_and_remove)
-KasperskyOS Community Edition SDK. You can download the latest version of the KasperskyOS Community
-Edition for free from [os.kaspersky.com](https://os.kaspersky.com/development/). The minimum required
-version of the KasperskyOS Community Edition SDK is 1.3. For more information, see
+KasperskyOS Community Edition SDK version 1.3. You can download it for free from
+[os.kaspersky.com](https://os.kaspersky.com/development/). For more information, see
 [System requirements](https://click.kaspersky.com/?hl=en-us&link=online_help&pid=kos&version=1.3&customization=KCE&helpid=system_requirements).
 1. Clone the JWT for KasperskyOS repository to your project directory (to reduce cloning time you can use `--depth 1` option):
     ```sh
